@@ -1,17 +1,19 @@
+import Link from "next/link";
+
 const COURSES_DATA = [
   {
     id: 1,
     title: "Tráfego Pago",
-    description: "Meta Ads, Google Ads e estratégias de performance",
+    description: "Campanhas digitais e análise de resultados voltadas para projetos educativos.",
     icon: "📣",
     bg: "#FDE68A",
     progress: "65%",
-    badge: { text: "Iniciar", type: "active" },
+    badge: { text: "Disponível", type: "active" },
   },
   {
     id: 2,
     title: "Informática Básica",
-    description: "Windows, Office, internet e produtividade digital",
+    description: "Ferramentas essenciais para a rotina escolar: Office, navegação e gestão de arquivos.",
     icon: "💻",
     bg: "#A7F3D0",
     progress: "0%",
@@ -20,44 +22,54 @@ const COURSES_DATA = [
   {
     id: 3,
     title: "Informática Avançada",
-    description: "Automação, IA no trabalho e ferramentas avançadas",
+    description: "Produtividade, automação e recursos digitais para professores e gestores.",
     icon: "⚙️",
     bg: "#BAE6FD",
     progress: "0%",
-    badge: { text: "🔒 Bloqueado", type: "locked" },
+    badge: { text: "Em breve", type: "locked" },
   },
   {
     id: 4,
     title: "Marketing Digital",
-    description: "Social media, copywriting e estratégia de conteúdo",
+    description: "Comunicação estratégica para escolas, projetos e ações de captação.",
     icon: "📱",
     bg: "#FCA5A5",
     progress: "0%",
-    badge: { text: "🔒 Bloqueado", type: "locked" },
+    badge: { text: "Em breve", type: "locked" },
     isLocked: true,
   },
 ];
 
 const ADVANTAGES_DATA = [
   {
-    icon: "🎮",
-    title: "Método Gamificado",
-    desc: "XP, conquistas e rankings que tornam estudar viciante",
+    icon: "🎓",
+    title: "Acesso a cursos e ferramentas",
+    desc: "Conteúdos e assinaturas digitais para alunos e professores em um único lugar.",
   },
   {
-    icon: "⚡",
-    title: "100% Prático",
-    desc: "Projetos reais desde a primeira aula. Zero teoria inútil.",
+    icon: "📅",
+    title: "Planos mensais e anuais",
+    desc: "Escolha entre flexibilidade ou economia com o melhor custo-benefício.",
   },
   {
-    icon: "🤝",
-    title: "Comunidade Ativa",
-    desc: "Mais de 5.000 alunos trocando experiências diariamente",
+    icon: "💰",
+    title: "Economia para escolas",
+    desc: "Melhore o investimento em aprendizagem com preços competitivos e planos claros.",
   },
   {
-    icon: "📱",
-    title: "Aprenda em qualquer lugar",
-    desc: "App mobile para estudar no ônibus, intervalo ou sofá",
+    icon: "🧑‍🏫",
+    title: "Ambiente separado para papéis",
+    desc: "Acesso dedicado para alunos e professores, com fluxos claros de uso.",
+  },
+  {
+    icon: "🚀",
+    title: "Desenvolvimento digital",
+    desc: "Aprimore habilidades digitais com ferramentas criativas e cursos práticos.",
+  },
+  {
+    icon: "🗂️",
+    title: "Organização centralizada",
+    desc: "Tudo gerenciado em uma plataforma única: planos, acessos e controle pedagógico.",
   },
 ];
 
@@ -84,23 +96,21 @@ export default function Home() {
 
       {/* Painel do menu */}
       <div className="bt-menu-panel" id="menuHamburguer">
-        <nav className="bt-menu-content" aria-label="Menu principal">
-          <a className="bt-menu-link" href="#cursos">
-            Cursos
-          </a>
+        <a className="bt-menu-link" href="#inicio">
+          Início
+        </a>
 
-          <a className="bt-menu-link" href="#como-funciona">
-            Como funciona
-          </a>
+        <a className="bt-menu-link" href="#precos">
+          Planos e Preços
+        </a>
 
-          <a className="bt-menu-link" href="#precos">
-            Preços
-          </a>
+        <a className="bt-menu-link" href="#como-funciona">
+          Como funciona
+        </a>
 
-          <button type="button" className="bt-menu-login">
-            Entrar
-          </button>
-        </nav>
+        <Link href="/login" className="bt-menu-login">
+          Login
+        </Link>
       </div>
 
       {/* Backdrop (clicar fora fecha) */}
@@ -115,38 +125,45 @@ export default function Home() {
         <div className="hero-blob" style={{ width: "60px", height: "60px", top: "40%", left: "5%", animationDelay: "2s" }} />
 
         <div className="hero-content">
-          <span className="hero-badge">🚀 Mais de 5.000 alunos ativos</span>
+          <span className="hero-badge">Brain Tech: tecnologia, educação e desenvolvimento em um só lugar.</span>
 
           <h1 className="hero-title">
-            Aprenda habilidades digitais de um{" "}
-            <span className="hero-title-highlight">jeito novo</span>
+            A plataforma educacional digital para escolas, alunos e professores
           </h1>
 
           <p className="hero-description">
-            Uma jornada gamificada que transforma o aprendizado em aventura.
-            Desbloqueie fases, conquiste XP e evolua na carreira digital.
+            A Brain Tech reúne cursos, ferramentas e assinaturas em um ambiente único para aprendizagem,
+            organização e evolução pedagógica.
           </p>
 
-          <button className="hero-button-cta" type="button">
-            🎮 Começar minha jornada grátis
-          </button>
+          <div className="hero-button-group">
+            <a href="#precos" className="hero-button-cta">
+              Ver planos
+            </a>
+            <a href="#como-funciona" className="pricing-button-secondary">
+              Como funciona
+            </a>
+            <a href="/login" className="hero-button-secondary">
+              Acessar plataforma
+            </a>
+          </div>
 
           <div className="hero-stats">
             <div className="stat-item">
               <div className="stat-number">12+</div>
-              <div className="stat-label">Cursos</div>
+              <div className="stat-label">Soluções digitais</div>
             </div>
             <div className="stat-item">
               <div className="stat-number">5k+</div>
-              <div className="stat-label">Alunos</div>
+              <div className="stat-label">Alunos atendidos</div>
             </div>
             <div className="stat-item">
               <div className="stat-number">98%</div>
               <div className="stat-label">Satisfação</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">24/7</div>
-              <div className="stat-label">Suporte</div>
+              <div className="stat-number">+100</div>
+              <div className="stat-label">Escolas conectadas</div>
             </div>
           </div>
         </div>
@@ -154,9 +171,9 @@ export default function Home() {
 
       {/* COURSES */}
       <section id="cursos" className="courses-section">
-        <h2 className="section-title">🗺️ Sua Trilha de Aprendizagem</h2>
+        <h2 className="section-title">Portfólio de soluções Brain Tech</h2>
         <p className="section-subtitle">
-          Desbloqueie fases conforme você avança. Cada curso é uma nova conquista!
+          Cursos e recursos alinhados ao desenvolvimento digital da escola e à capacitação dos professores.
         </p>
 
         <div className="courses-wrapper">
@@ -192,8 +209,10 @@ export default function Home() {
 
       {/* ADVANTAGES */}
       <section id="como-funciona" className="advantages-section">
-        <h2 className="section-title">✨ Por que a BrainTech?</h2>
-        <p className="section-subtitle">Uma metodologia que torna o aprendizado irresistível</p>
+        <h2 className="section-title">A Brain Tech em ação</h2>
+        <p className="section-subtitle">
+          Uma plataforma pensada para tornar a escola mais organizada, moderna e conectada.
+        </p>
 
         <div className="advantages-grid">
           {ADVANTAGES_DATA.map((adv) => (
@@ -208,15 +227,13 @@ export default function Home() {
 
       {/* CTA */}
       <section id="precos" className="cta-section">
-        <h2 className="cta-title">
-          Pronto para desbloquear sua
-          <br />
-          primeira fase? 🧠
-        </h2>
-        <p className="cta-description">Comece gratuitamente. Sem cartão de crédito. Sem enrolação.</p>
-        <button className="cta-button" type="button">
-          🎯 Quero começar agora
-        </button>
+        <h2 className="cta-title">Conheça nossos planos e escolha o melhor para sua escola</h2>
+        <p className="cta-description">
+          Planos mensais e anuais com foco em economia, acesso contínuo e controle pedagógico.
+        </p>
+        <a href="/precos" className="cta-button">
+          Ver planos disponíveis
+        </a>
       </section>
 
       {/* FOOTER */}
@@ -225,23 +242,21 @@ export default function Home() {
           <div className="footer-column">
             <h3>🧠 BrainTech Academy</h3>
             <p>
-              O playground de aprendizado digital que transforma habilidades em carreira.
-              Aprenda, evolua e conquiste.
+              Soluções digitais e educação integrada para escolas, professores e alunos.
+              Organize turmas, cursos e assinaturas em um único ambiente.
             </p>
           </div>
 
           <div className="footer-column">
-            <h4>Cursos</h4>
-            <a href="#cursos" className="footer-link">Tráfego Pago</a>
-            <a href="#cursos" className="footer-link">Edição de Vídeo</a>
-            <a href="#cursos" className="footer-link">Informática Básica</a>
-            <a href="#cursos" className="footer-link">Marketing Digital</a>
+            <h4>Recursos</h4>
+            <a href="#precos" className="footer-link">Planos e Preços</a>
+            <a href="#como-funciona" className="footer-link">Como Funciona</a>
+            <a href="#cursos" className="footer-link">Cursos</a>
           </div>
 
           <div className="footer-column">
             <h4>Empresa</h4>
             <a href="#" className="footer-link">Sobre nós</a>
-            <a href="#" className="footer-link">Blog</a>
             <a href="#" className="footer-link">Contato</a>
             <a href="#" className="footer-link">Política de Privacidade</a>
           </div>
@@ -251,6 +266,6 @@ export default function Home() {
           © {new Date().getFullYear()} BrainTech Academy · Todos os direitos reservados
         </div>
       </footer>
-    </div>
+    </div >
   );
 }
