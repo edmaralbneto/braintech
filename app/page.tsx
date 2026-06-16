@@ -95,24 +95,27 @@ export default function Home() {
       </header>
 
       {/* Painel do menu */}
+      {/* Painel do menu */}
       <div className="bt-menu-panel" id="menuHamburguer">
-        <a className="bt-menu-link" href="#inicio">
-          Início
-        </a>
+        <div className="bt-menu-content">
+          <a className="bt-menu-link" href="#inicio">
+            Início
+          </a>
 
-        <a className="bt-menu-link" href="#precos">
-          Planos e Preços
-        </a>
+          <a className="bt-menu-link" href="#precos">
+            Planos e Preços
+          </a>
 
-        <a className="bt-menu-link" href="#como-funciona">
-          Como funciona
-        </a>
+          <a className="bt-menu-link" href="#como-funciona">
+            Como funciona
+          </a>
 
-        <Link href="/login" className="bt-menu-login">
-          Login
-        </Link>
+          <Link href="/login" className="bt-menu-login">
+            Login
+          </Link>
+        </div>
       </div>
-
+      
       {/* Backdrop (clicar fora fecha) */}
       <label htmlFor="bt-menu-toggle" className="bt-menu-backdrop" aria-label="Fechar menu"></label>
 
@@ -209,23 +212,44 @@ export default function Home() {
 
       {/* ADVANTAGES */}
       <section id="como-funciona" className="advantages-section">
-        <h2 className="section-title">A Brain Tech em ação</h2>
-        <p className="section-subtitle">
-          Uma plataforma pensada para tornar a escola mais organizada, moderna e conectada.
-        </p>
-
-        <div className="advantages-grid">
-          {ADVANTAGES_DATA.map((adv) => (
-            <div key={adv.title} className="advantage-card">
-              <span className="advantage-icon">{adv.icon}</span>
-              <h3 className="advantage-title">{adv.title}</h3>
-              <p className="advantage-description">{adv.desc}</p>
-            </div>
-          ))}
+        <div className="section-headline">
+          <h2 className="section-title">A Brain Tech em ação</h2>
+          <p className="section-subtitle">
+            Uma plataforma pensada para tornar a escola mais organizada, moderna e conectada.
+          </p>
         </div>
-      </section>
 
-      {/* CTA */}
+        <div className="advantages-carousel-wrapper">
+          <a href="#advantage-last" className="carousel-button carousel-button-left" aria-label="Voltar">
+            ‹
+          </a>
+
+          <div className="advantages-carousel">
+            {ADVANTAGES_DATA.map((adv, index) => (
+              <div
+                key={adv.title}
+                id={
+                  index === 0
+                    ? "advantage-first"
+                    : index === ADVANTAGES_DATA.length - 1
+                      ? "advantage-last"
+                      : undefined
+                }
+                className="advantage-card carousel-card"
+              >
+                <span className="advantage-icon">{adv.icon}</span>
+                <h3 className="advantage-title">{adv.title}</h3>
+                <p className="advantage-description">{adv.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <a href="#advantage-first" className="carousel-button carousel-button-right" aria-label="Avançar">
+            ›
+          </a>
+        </div>
+
+      </section>{/* CTA */}
       <section id="precos" className="cta-section">
         <h2 className="cta-title">Conheça nossos planos e escolha o melhor para sua escola</h2>
         <p className="cta-description">
