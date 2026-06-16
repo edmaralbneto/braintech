@@ -780,3 +780,375 @@
   .pricing-how-section,
   .pricing-login-section { padding: 3rem 1.25rem; }
 }
+
+
+/* =========================
+   AUTH / LOGIN PAGE
+   CSS isolado para não brigar com o restante do site
+========================= */
+
+.bt-auth-header {
+  position: relative;
+  z-index: 30;
+  height: 80px;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: #1e293b;
+  border-bottom: 1px solid #334155;
+}
+
+.bt-auth-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.bt-auth-logo-icon {
+  font-size: 1.5rem;
+}
+
+.bt-auth-logo-text span {
+  color: #8b5cf6;
+}
+
+.bt-auth-header-button {
+  min-height: 42px;
+  padding: 0 1.35rem;
+  border-radius: 0.65rem;
+  background: #8b5cf6;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.bt-auth-header-button:hover {
+  background: #7c3aed;
+  transform: translateY(-1px);
+}
+
+.bt-auth-page {
+  min-height: calc(100vh - 80px);
+  padding: 3rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at top, rgba(139, 92, 246, 0.14), transparent 34%),
+    linear-gradient(180deg, #020617 0%, #0b1223 100%);
+}
+
+.bt-auth-card {
+  width: 100%;
+  max-width: 460px;
+  padding: 1.35rem;
+  border-radius: 1.25rem;
+  background: #0f172a;
+  border: 1px solid #334155;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
+}
+
+.bt-auth-tabs {
+  display: grid;
+  gap: 1rem;
+}
+
+.bt-auth-radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.bt-auth-tabs-header {
+  width: 97%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.4rem;
+  padding: 0.35rem;
+  border-radius: 0.9rem;
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(99, 102, 241, 0.14);
+}
+
+.bt-auth-tab-label {
+  width: 90%;
+  min-width: 0;
+  min-height:  44px;
+  padding: 0.75rem 0.5rem;
+  border-radius: 0.7rem;
+  color: #94a3b8;
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+#tab-aluno:checked ~ .bt-auth-tabs-header label[for="tab-aluno"],
+#tab-professor:checked ~ .bt-auth-tabs-header label[for="tab-professor"] {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #ffffff;
+}
+
+.bt-auth-tabs-body {
+  padding: 1.15rem;
+  border-radius: 1rem;
+  background: rgba(15, 23, 42, 0.88);
+  border: 1px solid rgba(99, 102, 241, 0.14);
+}
+
+.bt-auth-panel {
+  display: none;
+}
+
+#tab-aluno:checked ~ .bt-auth-tabs-body .bt-auth-panel-aluno,
+#tab-professor:checked ~ .bt-auth-tabs-body .bt-auth-panel-professor {
+  display: block;
+}
+
+.bt-auth-badge {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 1rem;
+  padding: 0.42rem 0.8rem;
+  border-radius: 999px;
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  color: #f8fafc;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.bt-auth-title {
+  margin: 0 0 0.7rem;
+  color: #ffffff;
+  font-family: var(--font-playfair), serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.bt-auth-description {
+  margin: 0 0 1.25rem;
+  color: #94a3b8;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.bt-auth-form {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.bt-auth-field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.bt-auth-label {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.bt-auth-input {
+  width: 90%;
+  min-height: 46px;
+  padding: 0.8rem 1rem;
+  border-radius: 0.8rem;
+  border: 1px solid #334155;
+  background-color: #111827;
+  color: #f8fafc;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.bt-auth-input::placeholder {
+  color: #64748b;
+}
+
+.bt-auth-input:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.12);
+}
+
+.bt-auth-submit {
+  width: 99%;
+  min-height: 46px;
+  margin-top: 0.25rem;
+  padding: 0.75rem 1rem;
+  border: 0;
+  border-radius: 0.8rem;
+  background: #10b981;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.bt-auth-submit:hover {
+  background: #059669;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(16, 185, 129, 0.24);
+}
+
+.bt-auth-forgot {
+  color: #93c5fd;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+}
+
+.bt-auth-forgot:hover {
+  color: #dbeafe;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 992px) {
+  .bt-auth-page {
+    padding: 2.5rem 1.5rem;
+    align-items: flex-start;
+  }
+
+  .bt-auth-card {
+    max-width: 480px;
+  }
+}
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 576px) {
+  .bt-auth-header {
+    height: 72px;
+    padding: 0 1rem;
+  }
+
+  .bt-auth-logo {
+    font-size: 1.05rem;
+  }
+
+  .bt-auth-logo-icon {
+    font-size: 1.3rem;
+  }
+
+  .bt-auth-header-button {
+    min-height: 38px;
+    padding: 0 0.85rem;
+    font-size: 0.8rem;
+    border-radius: 0.55rem;
+  }
+
+  .bt-auth-page {
+    min-height: calc(100vh - 72px);
+    padding: 1.25rem 0.85rem;
+  }
+
+  .bt-auth-card {
+    max-width: 100%;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+
+  .bt-auth-tabs-header {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.35rem;
+    padding: 0.3rem;
+  }
+
+  .bt-auth-tab-label {
+    min-height: 30px;
+    padding: 0.65rem 0.35rem;
+    font-size: 0.78rem;
+    border-radius: 0.65rem;
+  }
+
+  .bt-auth-tabs-body {
+    padding: 1rem;
+  }
+
+  .bt-auth-title {
+    font-size: 1.5rem;
+  }
+
+  .bt-auth-description {
+    font-size: 0.88rem;
+  }
+
+  .bt-auth-input {
+    min-height: 25px;
+    font-size: 0.95rem;
+  }
+}
+
+/* =========================
+   CELULAR PEQUENO
+========================= */
+
+@media (max-width: 380px) {
+  .bt-auth-header {
+    padding: 0 0.75rem;
+  }
+
+  .bt-auth-logo {
+    font-size: 0.95rem;
+  }
+
+  .bt-auth-header-button {
+    padding: 0 0.65rem;
+    font-size: 0.74rem;
+  }
+
+  .bt-auth-card {
+    padding: 0.85rem;
+  }
+
+  .bt-auth-tab-label {
+    font-size: 0.72rem;
+  }
+
+  .bt-auth-title {
+    font-size: 1.38rem;
+  }
+}
