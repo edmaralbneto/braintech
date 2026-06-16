@@ -60,7 +60,7 @@ export default function LoginPage() {
                     />
 
                     <button className="hero-button-cta" type="submit">
-                      Entrar como aluno
+                      Entrar
                     </button>
                     <a href="#" className="login-forgot">
                       Esqueci minha senha
@@ -99,7 +99,7 @@ export default function LoginPage() {
                     />
 
                     <button className="hero-button-cta" type="submit">
-                      Entrar como professor
+                      Entrar
                     </button>
                     <a href="#" className="login-forgot">
                       Esqueci minha senha
