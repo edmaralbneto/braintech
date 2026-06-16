@@ -7,8 +7,8 @@ const COURSES_DATA = [
     description: "Campanhas digitais e análise de resultados voltadas para projetos educativos.",
     icon: "📣",
     bg: "#FDE68A",
-    progress: "65%",
-    badge: { text: "Disponível", type: "active" },
+    progress: "0%",
+    badge: {},
   },
   {
     id: 2,
@@ -115,7 +115,7 @@ export default function Home() {
           </Link>
         </div>
       </div>
-      
+
       {/* Backdrop (clicar fora fecha) */}
       <label htmlFor="bt-menu-toggle" className="bt-menu-backdrop" aria-label="Fechar menu"></label>
 
@@ -140,15 +140,17 @@ export default function Home() {
           </p>
 
           <div className="hero-button-group">
-            <a href="#precos" className="hero-button-cta">
+            <a href="#precos" className="hero-button hero-button-cta">
               Ver planos
             </a>
-            <a href="#como-funciona" className="pricing-button-secondary">
+
+            <a href="#como-funciona" className="hero-button hero-button-secondary">
               Como funciona
             </a>
-            <a href="/login" className="hero-button-secondary">
+
+            <Link href="/login" className="hero-button hero-button-secondary">
               Acessar plataforma
-            </a>
+            </Link>
           </div>
 
           <div className="hero-stats">
@@ -195,13 +197,7 @@ export default function Home() {
                 <div className="course-content">
                   <h3 className="course-title">{course.title}</h3>
                   <p className="course-description">{course.description}</p>
-
-                  <div className="course-progress">
-                    <div className="course-progress-bar" style={{ width: course.progress }} />
-                  </div>
                 </div>
-
-                <span className={`course-badge ${course.badge.type}`}>{course.badge.text}</span>
               </div>
 
               {index < COURSES_DATA.length - 1 && <div className="course-divider"></div>}
@@ -219,37 +215,18 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="advantages-carousel-wrapper">
-          <a href="#advantage-last" className="carousel-button carousel-button-left" aria-label="Voltar">
-            ‹
-          </a>
-
-          <div className="advantages-carousel">
-            {ADVANTAGES_DATA.map((adv, index) => (
-              <div
-                key={adv.title}
-                id={
-                  index === 0
-                    ? "advantage-first"
-                    : index === ADVANTAGES_DATA.length - 1
-                      ? "advantage-last"
-                      : undefined
-                }
-                className="advantage-card carousel-card"
-              >
-                <span className="advantage-icon">{adv.icon}</span>
-                <h3 className="advantage-title">{adv.title}</h3>
-                <p className="advantage-description">{adv.desc}</p>
-              </div>
-            ))}
-          </div>
-
-          <a href="#advantage-first" className="carousel-button carousel-button-right" aria-label="Avançar">
-            ›
-          </a>
+        <div className="advantages-grid">
+          {ADVANTAGES_DATA.map((adv) => (
+            <article key={adv.title} className="advantage-card">
+              <span className="advantage-icon">{adv.icon}</span>
+              <h3 className="advantage-title">{adv.title}</h3>
+              <p className="advantage-description">{adv.desc}</p>
+            </article>
+          ))}
         </div>
 
-      </section>{/* CTA */}
+      </section>
+
       <section id="precos" className="cta-section">
         <h2 className="cta-title">Conheça nossos planos e escolha o melhor para sua escola</h2>
         <p className="cta-description">
