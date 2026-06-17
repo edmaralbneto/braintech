@@ -1152,3 +1152,688 @@
     font-size: 1.38rem;
   }
 }
+
+/* =========================
+   PRICING PAGE ISOLADA
+   Desktop + tablet + celular
+========================= */
+
+.bt-pricing-page,
+.bt-pricing-page * {
+  box-sizing: border-box;
+}
+
+.bt-pricing-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  min-height: 76px;
+  padding: 0 clamp(1rem, 5vw, 4rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  background: rgba(15, 23, 42, 0.96);
+  border-bottom: 1px solid #334155;
+  backdrop-filter: blur(14px);
+}
+
+.bt-pricing-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.bt-pricing-logo-icon {
+  font-size: 1.5rem;
+}
+
+.bt-pricing-logo-text span {
+  color: #8b5cf6;
+}
+
+.bt-pricing-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.bt-pricing-nav-link {
+  min-height: 40px;
+  padding: 0 0.95rem;
+  border-radius: 999px;
+  color: #dbeafe;
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.bt-pricing-nav-link:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-1px);
+}
+
+.bt-pricing-nav-login {
+  background: #8b5cf6;
+  color: #ffffff;
+}
+
+.bt-pricing-nav-login:hover {
+  background: #7c3aed;
+}
+
+.bt-pricing-main {
+  min-height: 100vh;
+  color: #ffffff;
+  background:
+    radial-gradient(circle at top right, rgba(59, 130, 246, 0.12), transparent 22%),
+    linear-gradient(180deg, #020617 0%, #0b1223 100%);
+}
+
+.bt-pricing-hero {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(4rem, 7vw, 6rem) clamp(1rem, 5vw, 4rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.88fr);
+  gap: clamp(2rem, 4vw, 3rem);
+  align-items: center;
+}
+
+.bt-pricing-hero-copy {
+  min-width: 0;
+}
+
+.bt-pricing-badge {
+  display: inline-flex;
+  max-width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  background: rgba(99, 102, 241, 0.12);
+  color: #e0e7ff;
+  font-size: 0.9rem;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.bt-pricing-title {
+  max-width: 780px;
+  margin: 1.2rem 0 1rem;
+  color: #ffffff;
+  font-size: clamp(2.4rem, 5vw, 4.25rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.bt-pricing-description {
+  max-width: 700px;
+  margin: 0 0 2rem;
+  color: #cbd5e1;
+  font-size: clamp(1rem, 1.4vw, 1.08rem);
+  line-height: 1.75;
+}
+
+.bt-pricing-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.bt-pricing-button {
+  min-height: 46px;
+  padding: 0 1.35rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 0.95rem;
+  font-weight: 800;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.bt-pricing-button:hover {
+  transform: translateY(-1px);
+}
+
+.bt-pricing-button-primary {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #ffffff;
+  box-shadow: 0 16px 34px rgba(79, 70, 229, 0.2);
+}
+
+.bt-pricing-button-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: #f8fafc;
+  border-color: rgba(148, 163, 184, 0.25);
+}
+
+.bt-pricing-button-tertiary {
+  background: rgba(255, 255, 255, 0.05);
+  color: #cbd5e1;
+  border-color: rgba(148, 163, 184, 0.16);
+}
+
+.bt-pricing-hero-visual {
+  min-width: 0;
+}
+
+.bt-pricing-visual-card {
+  width: 100%;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border-radius: 1.5rem;
+  border: 1px solid rgba(99, 102, 241, 0.18);
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.76));
+  box-shadow: 0 30px 80px rgba(15, 23, 42, 0.4);
+}
+
+.bt-pricing-visual-tag,
+.bt-pricing-info-label {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 1rem;
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(59, 130, 246, 0.18);
+  color: #bfdbfe;
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.bt-pricing-visual-card h2,
+.bt-pricing-section-headline h2,
+.bt-pricing-info-card h3,
+.bt-pricing-access-card h3 {
+  color: #ffffff;
+}
+
+.bt-pricing-visual-card h2 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.bt-pricing-visual-card p {
+  margin: 0;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+
+.bt-pricing-section {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(3.5rem, 6vw, 5rem) clamp(1rem, 5vw, 4rem);
+}
+
+.bt-pricing-section-headline {
+  max-width: 880px;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.bt-pricing-eyebrow {
+  margin: 0 0 0.7rem;
+  color: #a5b4fc;
+  font-size: 0.85rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.bt-pricing-section-headline h2 {
+  margin: 0 0 0.8rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  line-height: 1.15;
+}
+
+.bt-pricing-section-headline p {
+  max-width: 720px;
+  margin: 0 auto;
+  color: #cbd5e1;
+  line-height: 1.75;
+}
+
+.bt-pricing-intro {
+  max-width: 860px;
+  margin: 0 auto 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  color: #e2e8f0;
+  text-align: center;
+}
+
+.bt-pricing-intro p {
+  margin: 0;
+  line-height: 1.65;
+}
+
+.bt-pricing-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.bt-pricing-card {
+  min-width: 0;
+  padding: 1.5rem;
+  border-radius: 1.35rem;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(99, 102, 241, 0.14);
+  box-shadow: 0 18px 46px rgba(15, 23, 42, 0.22);
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.bt-pricing-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.9rem;
+}
+
+.bt-pricing-course-name {
+  margin: 0 0 0.25rem;
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.bt-pricing-course-tag {
+  margin: 0;
+  color: #c7d2fe;
+  font-size: 0.88rem;
+}
+
+.bt-pricing-course-highlight {
+  flex: 0 0 auto;
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(99, 102, 241, 0.12);
+  color: #e0e7ff;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.bt-pricing-values {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.bt-pricing-price-row {
+  min-width: 0;
+  padding: 1rem;
+  border-radius: 0.95rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(148, 163, 184, 0.08);
+}
+
+.bt-pricing-price-row-annual {
+  background: rgba(99, 102, 241, 0.1);
+  border-color: rgba(99, 102, 241, 0.16);
+}
+
+.bt-pricing-label {
+  display: block;
+  color: #c7d2fe;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.bt-pricing-value {
+  margin: 0.35rem 0 0;
+  color: #ffffff;
+  font-size: clamp(1.35rem, 2.2vw, 1.65rem);
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.bt-pricing-small {
+  display: block;
+  margin-top: 0.4rem;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+}
+
+.bt-pricing-savings {
+  margin: 0;
+  color: #a5b4fc;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.bt-pricing-actions {
+  margin-top: auto;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.bt-pricing-actions .bt-pricing-button,
+.bt-pricing-access-card .bt-pricing-button {
+  width: 100%;
+}
+
+.bt-pricing-link-secondary {
+  color: #93c5fd;
+  font-size: 0.92rem;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+}
+
+.bt-pricing-link-secondary:hover {
+  color: #dbeafe;
+}
+
+.bt-pricing-compare-grid,
+.bt-pricing-access-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.bt-pricing-info-card,
+.bt-pricing-access-card,
+.bt-pricing-how-card {
+  min-width: 0;
+  padding: 1.5rem;
+  border-radius: 1.35rem;
+  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.bt-pricing-info-card-highlighted {
+  border-color: rgba(99, 102, 241, 0.25);
+  background: linear-gradient(180deg, rgba(59, 130, 246, 0.12), rgba(15, 23, 42, 0.9));
+}
+
+.bt-pricing-info-card h3,
+.bt-pricing-access-card h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.25rem;
+}
+
+.bt-pricing-info-card p,
+.bt-pricing-access-card p,
+.bt-pricing-how-card p {
+  margin: 0;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+
+.bt-pricing-how-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.bt-pricing-how-step {
+  margin-bottom: 0.75rem;
+  color: #a5b4fc;
+  font-weight: 900;
+}
+
+.bt-pricing-access-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bt-pricing-access-card .bt-pricing-button {
+  margin-top: auto;
+}
+
+/* =========================
+   NOTEBOOK / TABLET GRANDE
+========================= */
+
+@media (max-width: 1100px) {
+  .bt-pricing-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .bt-pricing-visual-card {
+    max-width: 620px;
+  }
+
+  .bt-pricing-cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .bt-pricing-how-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+  .bt-pricing-header {
+    height: auto;
+    min-height: 76px;
+    padding: 0.9rem 1rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.8rem;
+  }
+
+  .bt-pricing-logo {
+    justify-content: center;
+  }
+
+  .bt-pricing-nav {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 0.5rem;
+    padding-bottom: 0.15rem;
+    scrollbar-width: none;
+  }
+
+  .bt-pricing-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .bt-pricing-nav-link {
+    flex: 0 0 auto;
+    min-height: 38px;
+    padding: 0 0.85rem;
+    background: rgba(255, 255, 255, 0.06);
+    font-size: 0.84rem;
+  }
+
+  .bt-pricing-hero {
+    padding: 3rem 1rem;
+  }
+
+  .bt-pricing-section {
+    padding: 3.5rem 1rem;
+  }
+
+  .bt-pricing-hero-actions {
+    align-items: stretch;
+  }
+
+  .bt-pricing-hero-actions .bt-pricing-button {
+    width: 100%;
+  }
+
+  .bt-pricing-compare-grid,
+  .bt-pricing-access-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bt-pricing-how-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 576px) {
+  .bt-pricing-header {
+    padding: 0.85rem;
+  }
+
+  .bt-pricing-logo {
+    font-size: 1.05rem;
+  }
+
+  .bt-pricing-logo-icon {
+    font-size: 1.3rem;
+  }
+
+  .bt-pricing-main {
+    background:
+      radial-gradient(circle at top, rgba(59, 130, 246, 0.1), transparent 24%),
+      linear-gradient(180deg, #020617 0%, #0b1223 100%);
+  }
+
+  .bt-pricing-hero {
+    padding: 2.5rem 0.85rem;
+  }
+
+  .bt-pricing-title {
+    font-size: 2rem;
+    letter-spacing: -0.03em;
+  }
+
+  .bt-pricing-description {
+    font-size: 0.95rem;
+  }
+
+  .bt-pricing-badge {
+    font-size: 0.8rem;
+  }
+
+  .bt-pricing-visual-card {
+    padding: 1.25rem;
+    border-radius: 1.15rem;
+  }
+
+  .bt-pricing-section {
+    padding: 3rem 0.85rem;
+  }
+
+  .bt-pricing-section-headline {
+    margin-bottom: 1.5rem;
+  }
+
+  .bt-pricing-section-headline h2 {
+    font-size: 1.55rem;
+  }
+
+  .bt-pricing-section-headline p,
+  .bt-pricing-intro p {
+    font-size: 0.94rem;
+  }
+
+  .bt-pricing-intro {
+    padding: 1rem;
+  }
+
+  .bt-pricing-cards-grid,
+  .bt-pricing-how-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bt-pricing-card,
+  .bt-pricing-info-card,
+  .bt-pricing-access-card,
+  .bt-pricing-how-card {
+    padding: 1.15rem;
+    border-radius: 1.1rem;
+  }
+
+  .bt-pricing-card-header {
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .bt-pricing-course-name {
+    font-size: 1.05rem;
+  }
+
+  .bt-pricing-course-highlight {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.72rem;
+  }
+
+  .bt-pricing-price-row {
+    padding: 0.9rem;
+  }
+
+  .bt-pricing-button {
+    width: 100%;
+    min-height: 44px;
+    padding: 0 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* =========================
+   CELULAR PEQUENO
+========================= */
+
+@media (max-width: 380px) {
+  .bt-pricing-title {
+    font-size: 1.75rem;
+  }
+
+  .bt-pricing-nav-link {
+    padding: 0 0.7rem;
+    font-size: 0.78rem;
+  }
+
+  .bt-pricing-card,
+  .bt-pricing-info-card,
+  .bt-pricing-access-card,
+  .bt-pricing-how-card,
+  .bt-pricing-visual-card {
+    padding: 1rem;
+  }
+
+  .bt-pricing-course-highlight {
+    display: none;
+  }
+}
